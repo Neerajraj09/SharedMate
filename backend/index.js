@@ -12,6 +12,26 @@ const methodOverride = require('method-override');
 // Initialize App
 const app = express();
 
+// Allowed Frontend Origins
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://shared-mate.vercel.app'
+];
+
+// CORS Configuration
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+
 // Database Connection
 async function main() {
     await mongoose.connect(process.env.MONGO_URI);
@@ -19,41 +39,17 @@ async function main() {
 
 main()
     .then(() => console.log('Database Connection Successful'))
-    .catch((err) => console.log('Database Connection Error:', err.message));
+    .catch((err) => {
+        console.log('Database Connection Error:', err.message);
+    });
 
 // Middleware
+app.use(cors(corsOptions));
+app.options(/.*/, cors(corsOptions));
+
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Allowed Frontend Origins
-const allowedOrigins = [
-    'http://localhost:5173'
-];
-
-// CORS Configuration
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
-}));
-
-// Handle CORS preflight requests
-app.options(/.*/, cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
-}));
 
 // Routers
 const authRoutes = require('./routes/auth');
@@ -82,3 +78,4 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`SharedMate Server is Listening on Port ${PORT}`);
 });
+```
