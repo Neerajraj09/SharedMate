@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharedMate User Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-light: #e8f0fe;
+            --secondary: #5f6368;
+            --success: #34a853;
+            --bg: #fdfdfd;
+            --card-bg: #ffffff;
+            --text: #202124;
+            --border: #dadce0;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Interactive Cards */
+        section {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        section:hover {
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            transform: translateY(-4px);
+            border-color: var(--primary-light);
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        /* Step numbers styling */
+        ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        ol li {
+            counter-increment: step-counter;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 12px;
+            background: #fbfbfb;
+        }
+
+        ol li::before {
+            content: counter(step-counter);
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+            background: var(--primary-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Buttons & Badges */
+        .btn-mock {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0 4px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        /* Animation for appearance */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .container { margin: 1rem auto; }
+            section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>SharedMate</h1>
+            <p class="intro-text">Split bills, not friendships. Manage group expenses with total transparency and ease.</p>
+        </header>
+
+        <section>
+            <span class="tag">Overview</span>
+            <h2>What is SharedMate?</h2>
+            <p>SharedMate is a streamlined application designed to track shared expenses for trips, roommates, or events. We handle the math so you can focus on the memories.</p>
+        </section>
+
+        <section>
+            <span class="tag">Setup</span>
+            <h2>Getting Started</h2>
+            <h3>Creating an Account</h3>
+            <ol>
+                <li>Launch SharedMate and tap <span class="btn-mock">Sign Up</span>.</li>
+                <li>Enter your name, email, and a secure password.</li>
+                <li>Verify your account to unlock all features.</li>
+            </ol>
+            
+            <h3>Logging In</h3>
+            <p>Access your dashboard anytime by clicking <span class="highlight">Login</span> and entering your credentials. We recommend setting up Biometric Login on mobile for faster access.</p>
+        </section>
+
+        <section>
+            <span class="tag">Groups</span>
+            <h2>Managing Trips</h2>
+            <h3>Creating a Trip</h3>
+            <ol>
+                <li>Tap the <span class="btn-mock">+ New Trip</span> button on your dashboard.</li>
+                <li>Name your adventure (e.g., <span class="highlight">"Paris 2024"</span>).</li>
+                <li>You'll automatically be set as the <strong>Trip Admin</strong>.</li>
+            </ol>
+
+            <h3>Adding Members</h3>
+            <p>Navigate to the <span class="highlight">Members</span> tab. Simply search for friends via their username or email to invite them instantly.</p>
+        </section>
+
+        <section>
+            <span class="tag">Expenses</span>
+            <h2>Tracking Money</h2>
+            <p>Any member can log an expense in real-time:</p>
+            <ol>
+                <li>Open your active trip and tap <span class="btn-mock">Add Expense</span>.</li>
+                <li>Add a description (e.g., <span class="highlight">"Sushi Dinner"</span>).</li>
+                <li>Enter the total amount paid.</li>
+                <li>SharedMate logs the payer and prepares the split.</li>
+            </ol>
+        </section>
+
+        <section>
+            <span class="tag">Finalize</span>
+            <h2>Settling Up</h2>
+            <p>When the journey ends, let SharedMate do the heavy lifting:</p>
+            <ol>
+                <li>The Admin taps <span class="btn-mock">End Trip</span>.</li>
+                <li>Our algorithm calculates the <strong>optimized path</strong> for debt repayment (minimizing the number of transactions).</li>
+                <li>View <span class="highlight">Suggested Payments</span> (e.g., "Alex owes Sam $42").</li>
+            </ol>
+            <p><strong>Pro Tip:</strong> Add your <span class="highlight">UPI ID</span> in your profile to receive instant transfers from your friends.</p>
+        </section>
+
+        <footer>
+            <p>Happy travels! Need more help? Contact our support team 24/7.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

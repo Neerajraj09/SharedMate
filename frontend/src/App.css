@@ -1,0 +1,108 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  padding: auto;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+html, body {
+  overflow-x: hidden;
+  background: rgb(243, 255, 246);
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 4s linear infinite;
+}
+
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap');
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@keyframes logoAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animated-logo {
+  animation: logoAnimation 1s ease-in-out;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animated-logo {
+  animation: slideUpFadeIn 1s ease-out;
+}

@@ -1,0 +1,22 @@
+{
+    "name": "SharedMate",
+    "short_name": "SharedMate",
+    "description": "SHARED EXPENSES • SIMPLIFIED TOGETHER.",
+    "start_url": "/intro",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#009688",
+    "icons": [
+      {
+        "src": "/pwa-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/pwa-icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
