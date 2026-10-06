@@ -1,39 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter-Regular.woff2') format('woff2'),
-         url('./assets/fonts/Inter-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+/* Base Styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter-Medium.woff2') format('woff2'),
-         url('./assets/fonts/Inter-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+* {
+  box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter-Bold.woff2') format('woff2'),
-         url('./assets/fonts/Inter-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
+/* Paragraph Font */
 @layer base {
   p {
     @apply font-nunito;
